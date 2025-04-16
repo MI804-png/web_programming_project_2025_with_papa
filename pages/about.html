@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <style>
+        .oojs-menu {
+            margin-top: 20px;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        .oojs-menu li {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .oojs-menu li:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Web-programming-1 Lecture Homework</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../pages/about.html" class="active">About</a></li>
+                <li><a href="../pages/services.html">Services</a></li>
+                <li><a href="../pages/products.html">Products</a></li>
+                <li><a href="../pages/ajax.html">AJAX</a></li>
+                <li><a href="../pages/geolocation.html">Geolocation</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+                <li><a href="../pages/drag-and-drop.html">Drag and Drop</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="div-content">
+            <h2>About Our Website</h2>
+            <p>Welcome to our website! We are dedicated to providing the best services and products to our customers. Our team is passionate about web programming and strives to deliver high-quality content and functionality.</p>
+            <p>Here, you can learn more about our offerings, get in touch with us, and explore our various services and products. Thank you for visiting!</p>
+        </div>
+
+        <div class="div-content">
+            <h3>OOJS Menu</h3>
+            <p>The menu below is dynamically generated using Object-Oriented JavaScript:</p>
+            <div id="oojsMenuContainer"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Creators: Mikhael Nabil Salama Rezk, Jane Smith</p>
+        <p>Neptun Codes: IHUTSC, DEF456</p>
+    </footer>
+
+    <script src="../assets/js/oojs-menu.js"></script>
+</body>
+</html>

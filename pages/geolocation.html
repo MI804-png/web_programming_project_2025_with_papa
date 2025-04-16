@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation - Web-programming-1 Lecture Homework</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Geolocation Page</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../pages/about.html">About</a></li>
+                <li><a href="../pages/services.html">Services</a></li>
+                <li><a href="../pages/products.html">Products</a></li>
+                <li><a href="../pages/ajax.html">AJAX</a></li>
+                <li><a href="../pages/geolocation.html" class="active">Geolocation</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+                <li><a href="../pages/drag-and-drop.html" class="active">Drag and Drop</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="div-content">
+            <h2>Geolocation Information</h2>
+            <button onclick="getLocation()">Get Location</button>
+            <p id="demo">Google Maps: Waiting for GPS coordinates...</p>
+            <div id="content-holder" style="margin-top: 20px;">
+                <!-- Google Map will be embedded here -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Creators: Mikhael Nabil Salama Rezk, Jane Smith | Neptun Codes: IHUTSC, DEF456</p>
+    </footer>
+
+    <script>
+        var x = document.getElementById("demo");
+
+        // Function to get the user's location
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        // Function to display the user's location and embed the map
+        function showPosition(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            // Display latitude and longitude
+            x.innerHTML = `Latitude: ${latitude}<br>Longitude: ${longitude}`;
+
+            // Embed Google Map
+            const newContent = `
+                <iframe 
+                    src="https://maps.google.com/maps?q=${latitude},${longitude}&hl=es;z=14&amp;output=embed" 
+                    width="600" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>`;
+            const contentHolder = document.getElementById("content-holder");
+            contentHolder.innerHTML = newContent;
+        }
+
+        // Function to handle geolocation errors
+        function showError(error) {
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    x.innerHTML = "User denied the request for Geolocation.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    x.innerHTML = "Location information is unavailable.";
+                    break;
+                case error.TIMEOUT:
+                    x.innerHTML = "The request to get user location timed out.";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    x.innerHTML = "An unknown error occurred.";
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

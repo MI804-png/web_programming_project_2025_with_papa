@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Web-programming-1 Lecture Homework</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Web-programming-1 Lecture Homework</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../pages/about.html">About</a></li>
+                <li><a href="../pages/services.html" class="active">Services</a></li>
+                <li><a href="../pages/products.html">Products</a></li>
+                <li><a href="../pages/ajax.html">AJAX</a></li>
+                <li><a href="../pages/geolocation.html">Geolocation</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+                <li><a href="../pages/drag-and-drop.html" class="active">Drag and Drop</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="div-content">
+            <h2>Our Services</h2>
+            <p>We offer a variety of services to meet your needs:</p>
+            <ul>
+                <li>Service 1: Description of service 1.</li>
+                <li>Service 2: Description of service 2.</li>
+                <li>Service 3: Description of service 3.</li>
+                <li>Service 4: Description of service 4.</li>
+            </ul>
+        </div>
+
+        <!-- Web Storage Section -->
+        <div class="div-content">
+            <h3>Web Storage</h3>
+            <p>Store and retrieve data using Web Storage:</p>
+            <input type="text" id="storageInput" placeholder="Enter some data">
+            <button onclick="saveToLocalStorage()">Save to Local Storage</button>
+            <button onclick="loadFromLocalStorage()">Load from Local Storage</button>
+            <p id="storageOutput"></p>
+        </div>
+
+        <!-- Web Workers Section -->
+        <div class="div-content">
+            <h3>Web Workers</h3>
+            <p>Perform background tasks using Web Workers:</p>
+            <button onclick="startWorker()">Start Worker</button>
+            <button onclick="stopWorker()">Stop Worker</button>
+            <p id="workerOutput"></p>
+        </div>
+
+        <!-- Server-Sent Events Section -->
+        <div class="div-content">
+            <h3>Server-Sent Events</h3>
+            <p>Receive real-time updates from the server:</p>
+            <button onclick="startSSE()">Start Receiving Updates</button>
+            <p id="sseOutput"></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>Creators: Mikhael Nabil Salama Rezk, Jane Smith</p>
+        <p>Neptun Codes: IHUTSC, DEF456</p>
+    </footer>
+
+    <script src="../assets/js/services.js"></script>
+</body>
+
+</html>

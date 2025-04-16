@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop API - Web-programming-1 Lecture Homework</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <style>
+        .drag-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .draggable-item {
+            width: 100px;
+            height: 100px;
+            background-color: #007bff;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            cursor: grab;
+        }
+
+        .drop-zone {
+            width: 200px;
+            height: 200px;
+            border: 2px dashed #007bff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .drop-zone.drag-over {
+            background-color: #e0f7ff;
+            border-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Web-programming-1 Lecture Homework</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../pages/about.html">About</a></li>
+                <li><a href="../pages/services.html">Services</a></li>
+                <li><a href="../pages/products.html">Products</a></li>
+                <li><a href="../pages/ajax.html">AJAX</a></li>
+                <li><a href="../pages/geolocation.html">Geolocation</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+                <li><a href="../pages/drag-and-drop.html" class="active">Drag and Drop</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="div-content">
+            <h2>Drag and Drop API</h2>
+            <p>Drag the items below and drop them into the drop zone.</p>
+            <div class="drag-container">
+                <div class="draggable-item" draggable="true" id="item1">Item 1</div>
+                <div class="draggable-item" draggable="true" id="item2">Item 2</div>
+                <div class="draggable-item" draggable="true" id="item3">Item 3</div>
+            </div>
+            <div class="drop-zone" id="dropZone">Drop Here</div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Creators: Mikhael Nabil Salama Rezk, Jane Smith</p>
+        <p>Neptun Codes: IHUTSC, DEF456</p>
+    </footer>
+
+    <script src="../assets/js/drag-and-drop.js"></script>
+</body>
+
+</html>
