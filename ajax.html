@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Operations</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <style>
+        .form-container {
+            margin-bottom: 20px;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-container input {
+            width: 100%;
+            max-width: 300px;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .output-container {
+            margin-top: 20px;
+        }
+
+        .output-container p {
+            margin: 5px 0;
+        }
+        
+        .oojs-menu {
+            margin-top: 20px;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        .oojs-menu li {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .oojs-menu li:hover {
+            background-color: #0056b3;
+        }
+
+        /* Dropdown styling */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>AJAX Operations</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../pages/about.html">About</a></li>
+                <li><a href="../pages/services.html">Services</a></li>
+                <li><a href="../pages/products.html">Products</a></li>
+                <li><a href="../pages/ajax.html" class="active">AJAX</a></li>
+                <li><a href="../pages/geolocation.html">Geolocation</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+                <li><a href="../pages/drag-and-drop.html">Drag and Drop</a></li>
+                <li class="dropdown">
+                    <a href="#">React</a>
+                    <div class="dropdown-content">
+                        <a href="pages/react-page1.html">React Page 1</a>
+                        <a href="pages/react-page2.html">React Page 2</a>
+                        <a href="pages/react-page3.html">React Page 3</a> <!-- New Page -->
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="div-content">
+            <h2>AJAX Operations</h2>
+
+            <!-- Create Section -->
+            <div class="form-container">
+                <h3>Create</h3>
+                <label for="createName">Name:</label>
+                <input type="text" id="createName" placeholder="Enter name">
+                <label for="createHeight">Height:</label>
+                <input type="number" id="createHeight" placeholder="Enter height">
+                <button onclick="createData()">Create</button>
+                <p id="createFeedback"></p>
+            </div>
+
+            <!-- Read Section -->
+            <div class="form-container">
+                <h3>Read</h3>
+                <button onclick="readData()">Read All Data</button>
+                <div id="readOutput" class="output-container"></div>
+            </div>
+
+            <!-- Update Section -->
+            <div class="form-container">
+                <h3>Update</h3>
+                <label for="updateId">ID:</label>
+                <input type="number" id="updateId" placeholder="Enter ID">
+                <button onclick="getDataForId()">Get Data for ID</button>
+                <label for="updateName">Name:</label>
+                <input type="text" id="updateName" placeholder="Enter name">
+                <label for="updateHeight">Height:</label>
+                <input type="number" id="updateHeight" placeholder="Enter height">
+                <button onclick="updateData()">Update</button>
+                <p id="updateFeedback"></p>
+            </div>
+
+            <!-- Delete Section -->
+            <div class="form-container">
+                <h3>Delete</h3>
+                <label for="deleteId">ID:</label>
+                <input type="number" id="deleteId" placeholder="Enter ID">
+                <button onclick="deleteData()">Delete</button>
+                <p id="deleteFeedback"></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Creators: Mikhael Nabil (IHUTSC), my other account</p>
+
+    </footer>
+
+    <script src="../assets/js/ajax.js"></script>
+</body>
+
+</html>
